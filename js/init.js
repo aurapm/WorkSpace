@@ -38,3 +38,9 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+const usuario = document.getElementById("usuario")
+
+usuario.innerHTML += `
+    <p style ="color: #FFFFFF8C">${localStorage.getItem('email')}</p>
+    `
