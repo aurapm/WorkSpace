@@ -93,11 +93,12 @@ document.addEventListener("DOMContentLoaded", function(e){
             currentCategoriesArray = resultObj.data
             showCategoriesList()
             //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
-        }
+        }        
     });
 
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowCategories(ORDER_ASC_BY_NAME);
+    
     });
 
     document.getElementById("sortDesc").addEventListener("click", function(){
