@@ -30,7 +30,13 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item" id="usuario">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li onclick="cerrarSesion()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
+            </ul>
           </li>
         </ul>
       </div>

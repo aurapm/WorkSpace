@@ -30,18 +30,49 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item" id="usuario">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li onclick="cerrarSesion()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div id="infoContainer" class="ml-1">
     </div>
+      <div class="row" id="imagenes" style="margin-left: 1%;">
+      </div>
+    <hr>
+      <div class="row" style="margin-left: 1%; " id="relatedProd">
+        <h5>Productos Relacionados</h5>        
+      </div>
+    <hr>  
+    <div id="commentsSection" class="ml-1">
+      <h5>Comentarios</h5>
+    
+    </div>
+    <br><br>   
+  <div id="comment" class="ml-1">
+    <label for="comentario"><h5>Deja tu comentario:</h5></label>
+    <br>
+    <form id="form">
+    <div class="stars">
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <textarea id="comentar" name="comentario" cols="50" rows="5"></textarea>
+    <br>
+    <button type="button" target="_self" class="btn-primary btn-lg" value="send" id="enviar">Enviar</button>     
+  </form>
+  </div>  
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -64,6 +95,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+
 </body>
 
 </html>

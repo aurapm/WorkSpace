@@ -42,5 +42,10 @@ let getJSONData = function(url){
 const usuario = document.getElementById("usuario")
 
 usuario.innerHTML += `
-    <p style ="color: #FFFFFF8C">${localStorage.getItem('email')}</p>
+    <span style ="color: #FFFFFF8C">${localStorage.getItem('email')}</span>
     `
+
+function cerrarSesion(){
+  localStorage.clear()
+};
+

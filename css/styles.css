@@ -195,11 +195,26 @@ a.custom-card:hover {
   margin: 0 25% 0 25%;
 }
 
+.ml-1 {
+  text-align: left;
+  width: 50%;
+  margin: 0 25% 0 3%;
+}
+
 .form-control {
   width: 50%;
   margin: 0 25%;
 }
 .image {
   width: 70%;
+}
+
+.stars span {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.stars:hover span {
+  opacity: 100%;
 }
 
