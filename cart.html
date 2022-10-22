@@ -41,12 +41,94 @@
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+  
+  <main class="pb-5 container">
+    <h2 class="text-center p-4">Carrito de Compras</h2>  
+    <p class="lead">Articulos a comprar</p>
+    
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="prodPrecargado">
+            <td id="imagen" style="width: 100px"></td>
+            <td id="name"></td>
+            <td id="cost"></td>
+            <td><input id="cantidad" class="form-control" type="number" value="1" style="margin-left: 0px;"></td>
+            <td id="subtotal"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+    <hr>    
+    <form>
+      <p class="lead">Tipo de envio</p>
+
+        <input type="radio" id="premium" name="envio" value="premium" checked/>
+        <label for="premium">Premium (15%)</label>
+        <br>
+        <input type="radio" id="express" name="envio" value="express"/>
+        <label for="express">Express(7%)</label>
+        <br>
+        <input type="radio" id="standard" name="envio" value="standard"/>
+        <label for="standard">Standard(5%)</label>
+        <br>
+        <br>
+        <p class="lead mt-4">Direccion de envio</p>
+        <div class="row">  
+          <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+            <label for="calle">Calle:</label><br>
+            <input type="text" id="calle" style="min-width: 80%"/>
+          </div>  
+          <br>
+          <div class="col-lg-6 col-md-12 col-sm-12 mt-2">  
+            <label for="numero">Numero:</label><br>
+            <input type="text" id="numero" style="min-width: 50%;"/>
+          </div>
+          
+          <div class="col-lg-6 col-md-12 col-sm-12 mt-3">  
+            <label for="esquina">Esquina:</label><br>
+            <input type="text" id="esquina" style="min-width: 80%"/>
+          </div>
+        </div>  
+    </form>
+    <hr>
+    <p class="lead">Costos</p>
+    <div class="list-group" >
+      <div class="list-group-item">     
+        <div class="row-cols-11 d-flex justify-content-between">
+          <p class="mb-0"> Subtotal</p>
+          <p id="subtotalDeCostos">USD </p>
+        </div>
+        <span class="text-muted mb-3">Costo unitario del producto por cantidad</span>  
+      </div>
+      <div class="list-group-item">
+        <div class="row-cols-11 d-flex justify-content-between">
+          <p class="mb-0"> Costo de envio</p>
+          <p id="costoEnvio">USD </p>
+        </div>
+          <span class="text-muted mb-3">Segun el tipo de envio</span>  
+      </div>
+
+      <div class="list-group-item">
+        <div class="row-cols-11 d-flex justify-content-between">
+          <p class="mb-1"> Total ($)</p>
+          <strong id="subtotalDeCostos">USD </strong>
+        </div>  
+      </div>  
+    </div>  
+  <hr>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">

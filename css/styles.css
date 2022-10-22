@@ -218,3 +218,17 @@ a.custom-card:hover {
   opacity: 100%;
 }
 
+
+#prodPrecargado td img{
+  width: 100px; 
+  height: 50px;
+}
+
+.carousel.slide {
+  width: 50%;
+  margin-top: 5%;  
+}
+
+.carousel.inner {
+  align-items: center;
+}

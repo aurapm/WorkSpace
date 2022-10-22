@@ -14,22 +14,21 @@ function showData() {
     } = productInfo
     
 
-    document.getElementById("infoContainer").innerHTML+= ` 
-        <div onclick="setCatID(${id})">
-            <h4 class="mb-1 mt-3">${name}</h4>
-            <hr>
-            <p class="mb-1"><strong>Precio</strong></p>
-            <p>${currency} ${cost}</p>
-            <p class="mb-1"><strong>Descripcion</strong></p>
-            <p>${description}</p>
-            <p class="mb-1"><strong>Categoria</strong></p>
-            <p>${category}</p>             
-            <p class="mb-1"><strong>Cantidad de Vendidos</strong></p>
-            <p>${soldCount}</p>
-            <p class="mb-1"><strong>Imagenes Ilustrativas</strong></p>
-        </div>  
-              
-        `;
+document.getElementById("infoContainer").innerHTML+= ` 
+    <div onclick="setCatID(${id})">
+        <h4 class="mb-1 mt-3">${name}</h4>
+        <hr>
+        <p class="mb-1"><strong>Precio</strong></p>
+        <p>${currency} ${cost}</p>
+        <p class="mb-1"><strong>Descripcion</strong></p>
+        <p>${description}</p>
+        <p class="mb-1"><strong>Categoria</strong></p>
+        <p>${category}</p>             
+        <p class="mb-1"><strong>Cantidad de Vendidos</strong></p>
+        <p>${soldCount}</p>
+        <p class="mb-1"><strong>Imagenes Ilustrativas</strong></p>
+    </div>                
+    `;
 
     showImage()
     relatedProducts()
@@ -38,13 +37,16 @@ function showData() {
 function showImage() {
     let images = productInfo.images
    
-    for (let img of images){
-    document.getElementById("imagenes").innerHTML+= `
-        <div class="col">
-            <img src="${img}" class="img-thumbnail">
-        </div>
-            `
-    };
+    document.getElementById("img1").innerHTML+= `
+    <img src="${images[0]}" class="d-block w-100">`
+    
+    for (let i = 1; i < images.length; i++){
+        let imagesCarousel = images[i]
+        document.getElementById("imgCarousel").innerHTML += `
+            <div class="carousel-item">
+            <img src="${imagesCarousel}" class="d-block w-100"
+            </div>` 
+    }
 };
 
 function setProductID(id) {
@@ -61,7 +63,7 @@ function relatedProducts(){
         const {id, name, image} = others
     
         document.getElementById("relatedProd").innerHTML+= `
-        <div onclick="setProductID(${id})"  class="col-md-2">
+        <div onclick="setProductID(${id})"  class="col-lg-3 md-2">
             <div class="card mb-4 shadow-sm custom-card cursor-active">
             <img src="${image}" alt="Imagen representativa de ${name}">
             <p><strong>${name}</strong></p> 
@@ -92,7 +94,6 @@ function showComments() {
     };  
 };
 
-
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(product_url).then(function(resultObj){
         if (resultObj.status === "ok"){
@@ -108,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         } 
     })
 });
-
 
 
 stars.forEach((selectedStar, clickIdx) => {    
@@ -144,3 +144,4 @@ return (false);
 btnEnviar.addEventListener("click", ()=>{
     submitForm()
 });
+
