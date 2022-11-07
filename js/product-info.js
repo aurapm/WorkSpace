@@ -1,9 +1,10 @@
 const product_url = PRODUCT_INFO_URL + `${localStorage.getItem('prodID')}` + EXT_TYPE;
 const comments_url = PRODUCT_INFO_COMMENTS_URL + `${localStorage.getItem('prodID')}` + EXT_TYPE;
-const commentsSection = document.getElementById("commentsSection")
+const commentsSection = document.getElementById("commentsSection");
 const stars = document.querySelectorAll(".stars span");
 const btnEnviar = document.getElementById("enviar");
 const newComment = document.getElementById("comentar");
+
 
 let productInfo = [];
 
