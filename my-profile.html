@@ -45,11 +45,11 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
+            <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li onclick="cerrarSesion()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
+              <li><a id="profile" class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li onclick="logOut()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
             </ul>
           </li>
         </ul>
@@ -58,9 +58,71 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <form id="profileForm" class="needs-validation" novalidate>
+        <br>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+            <h2>Perfil</h2>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+            <img id="profilePicture" src=""  class="img-thumbnail">
+          </div>  
+          <hr>
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="name1">Primer Nombre*</label><br>
+              <input class="form-control" type="text" id="name1" style="min-width: 80%" required/>
+              <div class="invalid-feedback">
+                Debe ingresar un nombre.
+              </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="name2">Segundo Nombre</label><br>
+              <input class="form-control" type="text" id="name2" style="min-width: 80%"/>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="lastName1">Primer Apellido*</label><br>
+              <input class="form-control" type="text" id="lastName1" style="min-width: 80%" required/>
+              <div class="invalid-feedback">
+                Debe ingresar un apellido.
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="lastName2">Segundo Apellido</label><br>
+              <input class="form-control" type="text" id="lastName2" style="min-width: 80%"/>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="email">E-mail</label><br>
+              <input class="form-control" type="email" id="email" style="min-width: 80%" placeholder="nombre@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+              <div class="invalid-feedback">
+                Debe ingresar un email.
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="telephone">Telefono de contacto</label><br>
+              <input class="form-control" type="text" id="telephone" style="min-width: 80%" pattern="[0-9]{8,9}" placeholder="xxx-xxx-xxx" required/>
+              <div class="invalid-feedback">
+                Debe ingresar un telefono.
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="profilePicture">Imagen de perfil</label><br>
+              <input class="form-control" type="file" id="loadPicture" />
+            </div>
+
+        </div>
       </div>
+      <hr>
+        
+      <button id="saveChanges" type ="submit" class="btn btn-primary"> Guardar cambios</button>
+      <div id="alertPlaceHolder">
+      </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">

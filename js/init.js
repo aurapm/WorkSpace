@@ -39,13 +39,19 @@ let getJSONData = function(url){
     });
 }
 
-const usuario = document.getElementById("usuario")
+const user = document.getElementById("user");
+const profile = document.getElementById("profile");
 
-usuario.innerHTML += `
-    <span style ="color: #FFFFFF8C">${localStorage.getItem('email')}</span>
+if(localStorage.getItem('email')){   
+  user.innerHTML += `
+      <span style ="color: #FFFFFF8C">${localStorage.getItem('email')}</span>
     `
+} else {
+  profile.classList.add("not-active")  
+}
 
-function cerrarSesion(){
+function logOut(){
   localStorage.clear()
 };
+
 

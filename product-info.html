@@ -31,11 +31,11 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
+            <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>            
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li onclick="cerrarSesion()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
+              <li><a id="profile" class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li onclick="logOut()"><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
             </ul>
           </li>
         </ul>
@@ -72,7 +72,7 @@
   <div id="comment" class="ml-1">
     <label for="comentario"><h5>Deja tu comentario:</h5></label>
     <br>
-    <form id="form">
+    <form id="form"  class="needs-validation" novalidate>
     <div class="stars">
       <span class="fa fa-star"></span>
       <span class="fa fa-star"></span>
@@ -80,9 +80,9 @@
       <span class="fa fa-star"></span>
       <span class="fa fa-star"></span>
     </div>
-    <textarea id="comentar" name="comentario" cols="50" rows="5"></textarea>
+    <textarea id="userComment" name="comentario" cols="50" rows="5" required></textarea>
     <br>
-    <button type="button" target="_self" class="btn-primary btn-lg" value="send" id="enviar">Enviar</button>     
+    <button type="submit" target="_self" class="btn-primary btn-lg" value="send" id="send">Enviar</button>     
   </form>
   </div>  
   </main>

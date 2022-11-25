@@ -1,12 +1,13 @@
-const btnIngresar = document.getElementById("ingresar");
+const btnLogIn = document.getElementById("btnLogIn");
 const email = document.getElementById("email");
 
-btnIngresar.addEventListener("click", function() {
-    sesion()
+// trae el boton para ingresar, y ejecuta la funcion session() 
+btnLogIn.addEventListener("click", function() {
+    openSession()
 })
 
-function sesion() { 
+//La función guarda el email en el local storage y redirige a index.html
+function openSession() { 
     localStorage.setItem('email', email.value)
-    location.href = "index.html"
 }
 

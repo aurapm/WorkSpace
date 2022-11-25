@@ -231,3 +231,18 @@ a.custom-card:hover {
 .carousel.inner {
   align-items: center;
 }
+
+.not-active{
+  pointer-events: none; 
+  cursor: default; 
+}
+
+#profilePicture {
+    width: 200px;
+    height: 200px;
+}
+
+#productsFilters{
+  display: flex;
+  justify-content: flex-end;
+}
